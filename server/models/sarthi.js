@@ -8,7 +8,7 @@ const vehicleSchema = new Schema({
   'phone': { type: 'String' },
   'start-date': { type: 'Date', default: Date.now, required: true },
   'end-date': { type: 'Date', default: Date.now },
-  'date-added': { type: 'Date', default: Date.now, required: true }
+  'date-added': { type: 'Date', default: Date.now, required: true },
 });
 
 export default mongoose.model('Sarthi', vehicleSchema);
