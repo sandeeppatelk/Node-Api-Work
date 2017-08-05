@@ -23,7 +23,8 @@ export function getSarthis(req, res) {
  * @returns void
  */
 export function addSarthi(req, res) {
-  if (!req.body.sarthi['first-name'] || !req.body.sarthi['last-name'] || !req.body.sarthi['start-date'] || !req.body.sarthi['date-added']) {
+
+  if (!req.body.sarthi['first-name'] || !req.body.sarthi['last-name'] || !req.body.sarthi['start-date'] || !req.body.sarthi['phone']) {
     return res.status(403).end();
   }
 
@@ -34,6 +35,24 @@ export function addSarthi(req, res) {
       return res.status(500).send(err);
     }
     return res.jsonp({ sarthi: saved });
+  });
+}
+
+/**
+ * Edit Single Sarthi
+ * @param req
+ * @param res
+ * @returns sarthi
+ */
+
+export function editSarthi(req, res) {
+
+  Sarthi.findOneAndUpdate({ _id: req.params.id }, req.body, {}}).exec((err, Sarthi = []) => {
+    if (err) {
+      return res.status(500).send(err);
+    }
+
+    return res.jsonp({ Sarthi });
   });
 }
 

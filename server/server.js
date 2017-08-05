@@ -35,6 +35,7 @@ import { fetchComponentData } from './util/fetchData';
 
 import vehicles from './routes/vehicles.routes';
 import sarthis from './routes/sarthi.routes';
+import users from './routes/user.routes';
 import serverConfig from './config';
 
 // Set native promises as mongoose promise
@@ -57,7 +58,7 @@ app.use(Express.static(path.resolve(__dirname, '../dist/client')));
 
 app.use('/api', sarthis);
 app.use('/api', vehicles);
-
+app.use('/api', users);
 // Render Initial HTML
 const renderFullPage = (html, initialState) => {
   const head = Helmet.rewind();
