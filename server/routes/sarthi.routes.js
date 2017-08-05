@@ -11,6 +11,9 @@ router.route('/sarthis/:id').get(SarthiController.getSarthi);
 // Add a new Sarthi
 router.route('/sarthis').post(SarthiController.addSarthi);
 
+// update Sarthi
+router.route('/sarthis/:id').put(SarthiController.editSarthi);
+
 // Delete a Sarthi by id
 router.route('/sarthis/:id').delete(SarthiController.deleteSarthi);
 

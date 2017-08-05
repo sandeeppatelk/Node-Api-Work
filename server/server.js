@@ -35,7 +35,11 @@ import { fetchComponentData } from './util/fetchData';
 
 import vehicles from './routes/vehicles.routes';
 import sarthis from './routes/sarthi.routes';
+<<<<<<< HEAD
 import passengers from './routes/passenger.routes';
+=======
+import users from './routes/user.routes';
+>>>>>>> amit-dev
 import serverConfig from './config';
 
 // Set native promises as mongoose promise
@@ -59,7 +63,7 @@ app.use(Express.static(path.resolve(__dirname, '../dist/client')));
 app.use('/api', sarthis);
 app.use('/api', vehicles);
 app.use('/api', passengers);
-
+app.use('/api', users);
 // Render Initial HTML
 const renderFullPage = (html, initialState) => {
   const head = Helmet.rewind();
