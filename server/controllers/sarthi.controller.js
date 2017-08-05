@@ -47,7 +47,7 @@ export function addSarthi(req, res) {
 
 export function editSarthi(req, res) {
 
-  Sarthi.findOneAndUpdate({ _id: req.params.id }, req.body, {}}).exec((err, Sarthi = []) => {
+  Sarthi.findOneAndUpdate({ _id: req.params.id }, req.body, {}).exec((err, Sarthi = []) => {
     if (err) {
       return res.status(500).send(err);
     }

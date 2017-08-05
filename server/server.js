@@ -35,11 +35,8 @@ import { fetchComponentData } from './util/fetchData';
 
 import vehicles from './routes/vehicles.routes';
 import sarthis from './routes/sarthi.routes';
-<<<<<<< HEAD
 import passengers from './routes/passenger.routes';
-=======
 import users from './routes/user.routes';
->>>>>>> amit-dev
 import serverConfig from './config';
 
 // Set native promises as mongoose promise

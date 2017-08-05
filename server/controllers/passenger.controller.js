@@ -28,12 +28,8 @@ export function getPassengers(req, res) {
 export function addPassenger(req, res) {
   if (!req.body.passenger['first-name']
      || !req.body.passenger['last-name']
-     || !req.body.passenger['passenger-type']
      || !req.body.passenger['phone']
      || !req.body.passenger['gender']
-     || !req.body.passenger['airport-name']
-     || !req.body.passenger['airport-code']
-
 
     ) {
     return res.status(403).end();

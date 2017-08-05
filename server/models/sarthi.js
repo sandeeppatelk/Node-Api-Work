@@ -9,7 +9,7 @@ const sarthiSchema = new Schema({
   'start-date': { type: 'Date', default: Date.now, required: true },
   'end-date': { type: 'Date', default: Date.now },
   'date-added': { type: 'Date', default: Date.now, required: true },
-  'vehicle-id' : {type: "String"}
+  'vehicle-id': { type: 'String' }
 });
 
 export default mongoose.model('Sarthi', sarthiSchema);
