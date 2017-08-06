@@ -5,20 +5,17 @@ pages:
     paths:
     - node_modules/
 
-  script:
+  before_script:
   - npm update
   - npm install 
-  artifacts:
-    paths:
-    - public
-  only:
-  - master
-staging:
-  stage: deploy
-  script:
   - apt-get update -yq
   - apt-get install -y rubygems ruby-dev
   - gem install dpl
+  only:
+  - master
+
+staging:
+  stage: deploy
   - dpl --provider=heroku --app=transportation-api --api-key=$HEROKU_STAGING_API_KEY
   only:
   - master
