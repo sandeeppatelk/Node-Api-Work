@@ -5,7 +5,7 @@ pages:
     paths:
     - node_modules/
 
-  before_script:
+before_script:
   - npm update
   - npm install
   - apt-get update -yq
@@ -13,6 +13,9 @@ pages:
   - gem install dpl
   only:
   - master
+
+stages:
+  - deploy
 
 staging:
   stage: deploy
