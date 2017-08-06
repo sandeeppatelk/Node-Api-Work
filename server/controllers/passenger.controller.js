@@ -46,6 +46,24 @@ export function addPassenger(req, res) {
 }
 
 /**
+ * Edit Single Passenger
+ * @param req
+ * @param res
+ * @returns Passenger
+ */
+
+export function editPassenger(req, res) {
+
+  Passenger.findOneAndUpdate({ _id: req.params.id }, req.body, {}).exec((err, passenger = []) => {
+    if (err) {
+      return res.status(500).send(err);
+    }
+
+    return res.jsonp({ passenger });
+  });
+}
+
+/**
  * Get a single Passenger
  * @param req
  * @param res
