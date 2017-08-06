@@ -13,4 +13,8 @@ pages:
     - public
   only:
   - master
-
+staging:
+  stage: deploy
+  script:
+  - gem install dpl
+  - dpl --provider=heroku --app=transportation-api --api-key=97373a03-a92f-46e0-a679-98cc13e3c281
