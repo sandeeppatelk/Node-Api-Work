@@ -17,6 +17,7 @@ pages:
 staging:
   stage: deploy
   script:
+  - gem install dpl
   - dpl --provider=heroku --app=transportation-api --api-key=$HEROKU_STAGING_API_KEY
   only:
   - master
