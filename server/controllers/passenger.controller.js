@@ -80,6 +80,26 @@ export function getPassenger(req, res) {
 }
 
 /**
+ * Get a single Passenger
+ * @param req
+ * @param res
+ * @returns void
+ */
+export function getPassengerList(req, res) {
+  let query = { 'pickup-saarthi': req.params.id };
+  if (req.body.isDropOff) {
+    query = { 'dropoff-saarthi': req.params.id };
+  }
+  Passenger.find(query).exec((err, passengers = []) => {
+    if (err) {
+      return res.status(500).send(err);
+    }
+
+    return res.jsonp({ passengers });
+  });
+}
+
+/**
  * Delete a Passenger
  * @param req
  * @param res

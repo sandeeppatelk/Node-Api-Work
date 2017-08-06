@@ -37,6 +37,24 @@ export function addVehicle(req, res) {
 }
 
 /**
+ * Edit Single Vehicle
+ * @param req
+ * @param res
+ * @returns Passenger
+ */
+
+export function editVehicle(req, res) {
+
+  Vehicle.findOneAndUpdate({ _id: req.params.id }, req.body, {}).exec((err, vehicle = []) => {
+    if (err) {
+      return res.status(500).send(err);
+    }
+
+    return res.jsonp({ vehicle });
+  });
+}
+
+/**
  * Get a single Vehicle
  * @param req
  * @param res
