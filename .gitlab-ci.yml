@@ -1,24 +1,22 @@
 image: node:6.10.3
 
+before_script:
+  - npm install
+  - apt-get update -yq
+  - apt-get install -y rubygems ruby-dev
+  
 pages:
   cache:
     paths:
     - node_modules/
-
-before_script:
-  - npm update
-  - npm install
-  - apt-get update -yq
-  - apt-get install -y rubygems ruby-dev
-  - gem install dpl
+  stage: build
+  script:
+    - gem install dpl
   only:
   - master
-
-stages:
-  - deploy
-
 staging:
   stage: deploy
+  script:
   - dpl --provider=heroku --app=transportation-api --api-key=$HEROKU_STAGING_API_KEY
   only:
   - master
