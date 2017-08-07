@@ -12,7 +12,7 @@ router.route('/sarthis/:id').get(SarthiController.getSarthi);
 router.route('/sarthis').post(SarthiController.addSarthi);
 
 // update Sarthi
-router.route('/sarthis/:id').put(SarthiController.editSarthi);
+router.route('/sarthis/:id').put(SarthiController.updateSarthi);
 
 // Delete a Sarthi by id
 router.route('/sarthis/:id').delete(SarthiController.deleteSarthi);

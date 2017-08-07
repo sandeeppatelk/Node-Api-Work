@@ -1,5 +1,7 @@
 import { Router } from 'express';
+
 import * as PassengerController from '../controllers/passenger.controller';
+
 const router = new Router();
 
 router.route('/passengers').get(PassengerController.getPassengers);

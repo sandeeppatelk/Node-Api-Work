@@ -45,14 +45,14 @@ export function addSarthi(req, res) {
  * @returns sarthi
  */
 
-export function editSarthi(req, res) {
+export function updateSarthi(req, res) {
 
-  Sarthi.findOneAndUpdate({ _id: req.params.id }, req.body, {}).exec((err, Sarthi = []) => {
+  Sarthi.findOneAndUpdate({ _id: req.params.id }, req.body, {}).exec((err, sarthi = []) => {
     if (err) {
       return res.status(500).send(err);
     }
 
-    return res.jsonp({ Sarthi });
+    return res.jsonp({ sarthi });
   });
 }
 

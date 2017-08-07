@@ -43,7 +43,7 @@ export function addVehicle(req, res) {
  * @returns Passenger
  */
 
-export function editVehicle(req, res) {
+export function updateVehicle(req, res) {
 
   Vehicle.findOneAndUpdate({ _id: req.params.id }, req.body, {}).exec((err, vehicle = []) => {
     if (err) {
